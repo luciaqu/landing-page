@@ -50,8 +50,32 @@ $(document).ready(function(){
 
 		if (errores.length == 0){ //si el array de los errores es igual a cero, SUBMIT
 			/*$('#formulario').submit();*/
+			
 			var datos = $('#contacto').serialize();
 			console.log (datos);
+
+			$.ajax({
+                url: "api/api.php",
+                type: "post",
+                data: datos,
+                success: function (response) {
+                    // you will get response from your php page (what you echo or print)   
+                  if(response){
+                    console.log(response);   
+                      console.log("todo ok"); 
+                      alert("Formulario enviado correctamente");
+                    }else{  
+                      alert("Error");
+                      location.reload();
+                    }
+                  }
+                }        
+          });           
+      }else{
+        
+        for(i=0;i<errors.length;i++){
+            $('#error-list').append(errors[i]);
+        }
 
 			$('#gracias').show();  //método de jquery para mostrar
 			$('#gracias').append('<p>¡Gracias!</p>');

@@ -36,6 +36,9 @@ header{/*******HEADER*******/
 .carro{
 	height: 100%;
 }
+.vermas{
+	margin-right: 0;
+}
 
 .section2{
 	height: 300px;
