@@ -1,6 +1,14 @@
 var errores= [];
 var options=['Mustard','Ketchup','Relish'];
 
+//variables slider
+var slideimgs = ['images/slider1.jpg','images/slider2.jpg','images/slider3.jpg'];
+var imagen = $('#slider-img');
+var k=0;
+var interval; 
+//fin variables slider
+
+
 $(document).ready(function(){
 	console.log('Ready Ready Ready');
 	$('#msj').hide(); // oculto el div
@@ -17,7 +25,14 @@ $(document).ready(function(){
 		}
 	});
 
+	//llama funcion slider
+	slider();
 
+	$('#sliderlink').on('click', function(){
+	
+	slide();
+	
+	});//fin funciones slider
 
 	$('.vermas').on('click',function(){
 		var vid = $(this).data('id');
@@ -32,7 +47,7 @@ $(document).ready(function(){
 
 	});
 
-	var select = $('#condimento');
+	var select = $('#condimento');//variable select
 	for(i=0; i<options.length;i++){
 		value=i;
 		console.log('condimento in');
@@ -68,14 +83,8 @@ $(document).ready(function(){
                       alert("Error");
                       location.reload();
                     }
-                  }
-                }        
-          });           
-      }else{
-        
-        for(i=0;i<errors.length;i++){
-            $('#error-list').append(errors[i]);
-        }
+                  }//response
+                });//ajáx             
 
 			$('#gracias').show();  //método de jquery para mostrar
 			$('#gracias').append('<p>¡Gracias!</p>');
@@ -156,8 +165,35 @@ function soloLetras(x) { //Valido apellido y nombre con expresion regular//
 	}
 	return false;
 }
+//funciones slider
+function slide() {
+$(imagen).fadeOut('slow', function() {
+
+	if (k==(slideimgs.length-1)) {
+		k=0
+	} else {k++};
+
+	console.log(slideimgs[k]);	
+	$(imagen).attr('src',slideimgs[k]).fadeIn('slow');
+
+	});
+};
 
 
+function slider() {
+	interval = setInterval(slide, 4000);
+
+	$('#sliderlink').on({
+		mouseover: function(){
+		clearInterval(interval);		
+		},
+
+		mouseleave: function(){
+		slider();		
+		}
+	});
+
+};//fin funciones slider
 
 
 
