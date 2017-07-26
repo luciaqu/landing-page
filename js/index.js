@@ -1,8 +1,8 @@
 var errores= [];
-var options=['Mustard','Ketchup','Relish'];
+var options=['-','Masculino','Femenino','Otro'];
 
 //variables slider
-var slideimgs = ['images/slider1.jpg','images/slider2.jpg','images/slider3.jpg'];
+var slideimgs = ['img/slider1.jpg','img/slider2.jpg','img/slider3.jpg','img/slider4.jpg'];
 var imagen = $('#slider-img');
 var k=0;
 var interval; 
@@ -11,6 +11,7 @@ var interval;
 
 $(document).ready(function(){
 	console.log('Ready Ready Ready');
+	// Formulario-login
 	$('#msj').hide(); // oculto el div
 	$('#ingresar').on ('click', function(){
 		user = $('#username').val();
@@ -47,22 +48,15 @@ $(document).ready(function(){
 
 	});
 
-	var select = $('#condimento');//variable select
-	for(i=0; i<options.length;i++){
-		value=i;
-		console.log('condimento in');
-		var option = '<option value ="'+ value +'">'+ options[i] + '</option>';
-		select.append(option); 
-	}
-
 	$('#gracias').hide();
+
 	$('#send').on('click', function(){
 		errores=[];
 		console.log('funcionó!');
 		validarEmail($('#email').val());
 		validarNombre($('#nombre').val());
 		validarEdad($('#edad').val());
-
+		
 		if (errores.length == 0){ //si el array de los errores es igual a cero, SUBMIT
 			/*$('#formulario').submit();*/
 			
@@ -78,30 +72,44 @@ $(document).ready(function(){
                   if(response){
                     console.log(response);   
                       console.log("todo ok"); 
+
                       alert("Formulario enviado correctamente");
                     }else{  
                       alert("Error");
                       location.reload();
                     }
                   }//response
-                });//ajáx             
-
+                });//ajáx
+			$('#gracias').addClass('bg-success'); 
 			$('#gracias').show();  //método de jquery para mostrar
 			$('#gracias').append('<p>¡Gracias!</p>');
 		}else{
+			$('#gracias').addClass('bg-warning'); 
 			$('#gracias').show(); //sino, recorrer array: en el div con ID error pusheo los errores nombrados en las funciones
 			for (i=0;i<errores.length;i++){ 
 				$('#gracias').append(errores[i]);
-		   }
+		    }
 		}
 	});//termina function de INGRESAR
+
 	$('#limpiar').on('click',function(){
 		$('#contacto')[0].reset();
 		console.log('limpiar formulario');
 		$('#gracias').html('');
 	});//botón limpiar
 	
+
 }); //termina document ready
+
+	var select = $('#genero');//variable select
+    for(i=0; i<options.length;i++){
+		value=i;
+		console.log('genero in');
+		var option = '<option value ="'+ value +'">'+ options[i] + '</option>';
+		select.append(option); 
+		
+	}
+
 function validarEmail(email) { //Funcion para validar formato de mail//
 		var expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/; //Expresion regular para chequear formato mail//
 		console.log('validarEmail in');
@@ -165,6 +173,9 @@ function soloLetras(x) { //Valido apellido y nombre con expresion regular//
 	}
 	return false;
 }
+
+
+
 //funciones slider
 function slide() {
 $(imagen).fadeOut('slow', function() {

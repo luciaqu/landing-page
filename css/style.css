@@ -28,22 +28,39 @@ header{/*******HEADER*******/
 	display:block;
 	height: 170px;
 }	
-.slider-ppal{
+
+.formulario-login{
 	height: 300px;
+	margin-bottom: 2em;
+	padding-top: 1em;
+	padding-right:2em;
+}
+
+.menu{
+	margin-top: 1em;
+}
+
+h2{
+	text-align: center;
+	margin-bottom: 1em;
+}
+.slider-ppal{
+	height: 100%;
 	margin-bottom: 2em;
 	background: white;
 }
-.carro{
-	height: 100%;
-}
-.vermas{
-	margin-right: 0;
+
+h3{
+	margin-left:0.5em;
 }
 
+.img-nota{
+	margin-left:0;
+}
 .section2{
 	height: 300px;
 	background:red;
-	margin-bottom: 2em;
+	margin-bottom: 4em;
 	padding-top: 1em;
 	padding-right:2em;
 }
@@ -51,21 +68,20 @@ header{/*******HEADER*******/
 .section3{
 	height: 300px;
 	background: pink;
-	margin-bottom: 2em;
+	margin-bottom: 4em;
 	padding-top: 1em;
 	padding-right:2em;
 }
 
-.formulario1{
-	height: 300px;
-	margin-bottom: 2em;
-	padding-top: 1em;
-	padding-right:2em;
+.vermas{
+	
 }
 
-.formulario{
+
+
+.formulario-contacto{
 	margin-bottom: 5em;
-	height: 300px;
+	height: 500px;
 }
 .extra{
 	display: none;
