@@ -10,72 +10,68 @@
 </head>
 <body>
     <div class="container"> <!--inicio contenedor principal-->
-    <div class="row">
-        <header class="col-md-12 col-xs-12">
+    
+        <header class="row">
+
             <figure id="headerLogo" class="col-md-4 col-xs-12"><!--Logo principal-->
-                <a href="index.html"><img class="img-responsive col-xs-12" src="img/index/Logo-Huesped-2014.png" alt="Logo Fundación Huésped. Prevención, ciencia, derechos"></a>
+                <a href="index.html"><img class="img-responsive" src="img/index/Logo-Huesped-2014.png" alt="Logo Fundación Huésped. Prevención, ciencia, derechos"></a>
             </figure>
-            <div class="col-md-4 col-xs-12 conredes">
-                <nav class="col-md-12 col-xs-12 navbar" id="socialNav">
+            <nav class="col-md-offset-1 col-md-3 col-sm-12" id="socialNav">
                 <!--íconos de redes de <a href='http://www.freepik.es/vector-gratis/conjunto-de-iconos-de-redes-sociales-planos_871053.htm'>Designed by Freepik</a> -->
-                    <a href="https://www.facebook.com/FundHuesped" blank><img class="ic-redes" src="img/index/facebook-ic.png" alt="Logo de facebook"></a>
-                    <a href="https://twitter.com/FundHuesped"><img class="ic-redes" src="img/index/twitter-ic.png" alt="Logo de twitter"></a>
-                    <a href="https://www.youtube.com/user/fhuesped"><img class="ic-redes" src="img/index/youtube-ic.png" alt="Logo de youtube"></a>
-                    <a href="https://plus.google.com/+FundHuesped"><img class="ic-redes" src="img/index/googleplus-ic.png" alt="Logo de google+"></a>
-                    <a href="https://www.instagram.com/fundhuesped/"><img class="ic-redes" src="img/index/instagram-ic.png" alt="Logo de instagram"></a>
-                    <a href="https://www.linkedin.com/company/fundacion-huesped"><img class="ic-redes" src="img/index/link-ic.png" alt="Logo de linkedin"></a>      
-                </nav>
-            </div>
+                <a href="https://www.facebook.com/FundHuesped" blank><img class="ic-redes" src="img/index/facebook-ic.png" alt="Logo de facebook"></a>
+                <a href="https://twitter.com/FundHuesped"><img class="ic-redes" src="img/index/twitter-ic.png" alt="Logo de twitter"></a>
+                <a href="https://www.youtube.com/user/fhuesped"><img class="ic-redes" src="img/index/youtube-ic.png" alt="Logo de youtube"></a>
+                <a href="https://plus.google.com/+FundHuesped"><img class="ic-redes" src="img/index/googleplus-ic.png" alt="Logo de google+"></a>
+                <a href="https://www.instagram.com/fundhuesped/"><img class="ic-redes" src="img/index/instagram-ic.png" alt="Logo de instagram"></a>
+                <a href="https://www.linkedin.com/company/fundacion-huesped"><img class="ic-redes" src="img/index/link-ic.png" alt="Logo de linkedin"></a>
+            </nav>
 
-            <section class="col-md-3 col-xs-12 formulario-login pull-right">
+            <section class="col-md-4 col-sm-12 formulario-login">
                 <form id="login" name="login">
-
                     <input type="text" name="username" class="form-control form-sm" id="username" placeholder="usuario"><br/>
                     <input type="password" name="password" class="form-control" id="password" placeholder="contraseña"><br/>
                     <input type="button" name="ingresar" class="btn-xs btn pull-right" id="ingresar" value="ingresar">
                 </form>
                 <div id="msj"></div>
             </section>
-            
-        </header>
-        </div><!--Fin row de header-->
+
+        </header><!--Fin row de header-->
                    
 
         <nav class="navbar navbar-default menu row">
             <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="col-md-3"><a href="#carousel">Slider</a></li>
-                    <li class="col-md-3"><a href="#info">Información</a></li>
-                    <li class="col-md-3"><a href="#evento">Eventos</a></li>
-                    <li class="col-md-3"><a href="#contacto">Contacto</a></li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
-          </div><!-- /.container-fluid -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed hambur" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        </button>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse hambur" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="col-md-3"><a href="#carousel">Slider</a></li>
+                            <li class="col-md-3"><a href="#info">Información</a></li>
+                            <li class="col-md-3"><a href="#evento">Eventos</a></li>
+                            <li class="col-md-3"><a href="#contacto">Contacto</a></li>
+                        </ul>
+                    </div>    
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
         </nav>
 
-        <section class="row"><!-- SLIDER -->
-            <main class="col-md-12 col-xs-12" id="carousel">
-                <h2>Novedades</h2>
-                <div id="slider" class="slider-ppal col-md-12 col-xs-12">
-                    <a href="#" class="slide col-md-offset-3 col-md-6" id="sliderlink" data-img="1">
-                        <img class="col-md-12 col-xs-12" id="slider-img" src="img/slider1.jpg">
+        <section class="row" id="carousel"><!-- SLIDER -->
+                <h3 class="titulo-seccion">Novedades</h3>
+                <div id="slider" class="slider-ppal col-lg-12 col-md-12 col-sm-12">
+                    <a href="#" class="slide" id="sliderlink" data-img="1">
+                        <img class="img-responsive col-md-offset-1 col-md-10 col-xs-12" id="slider-img" src="img/slider1.jpg">
                     </a>
                 </div>
-            </main>
         </section> <!--/SLIDER-->
         
-        <section class="row section2" id="info">
-            <h3>Información</h3>
+        <section class="row seccion" id="info">
+            <h3 class="titulo-seccion">Información</h3>
             <img src="img/index/hiv-aids_3.jpg" class="col-md-3 col-xs-12 img-nota">
             <p class="col-md-9 col-xs-12">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -98,8 +94,8 @@
             <input type="button" value="ver más" class="vermas btn-xs btn pull-right" data-id="1" id="vermas1">        
         </section>
 
-        <section class="row section3" id="evento">
-            <h3>Eventos</h3>
+        <section class="row seccion" id="evento">
+            <h3 class="titulo-seccion">Eventos</h3>
             <img src="img/index/world-aids-day-dec-1.jpg" class="col-md-3 col-xs-12 img-nota">
             <p class="col-xs-12 col-md-9">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -126,14 +122,11 @@
         <div class="row">
             <div id="gracias" class="col-md-12 col-xs-12"></div>
         </div>
-         <div class="row">
-            <div id="nogracias" class="col-md-12 col-xs-12"></div>
-        </div>
-        <div class="row">        
+        <div class="row form-row">
+            <h3 class="col-md-12 col-sm-12" id="form-title">Formulario de inscripción</h3>        
             <form action="" class="formulario-contacto col-md-12" id="contacto"> <!--ID CONTACTO QUE LUEGO SE TOMA EN EL JS PARA SUBMITEAR-->
-                <h1 class="col-md-12 col-sm-12">Formulario de inscripción</h1>
-                <div class="row">
-                    <div class="form-group col-md-6 col-xs-12">
+                <div class="row" id="div-form">
+                    <div class="form-group col-md-6 col-sm-12">
                         <label for="nombre">Nombre:</label>
                         <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingresá tu nombre">
                     </div>
