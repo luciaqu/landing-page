@@ -55,7 +55,7 @@ $(document).ready(function(){
 
 	$('#send').on('click', function(){
 		errores=[];
-		console.log('funcionó!');
+		$('#gracias').empty();
 		validarEmail($('#email').val());
 		validarNombre($('#nombre').val());
 		validarEdad($('#edad').val());
@@ -83,11 +83,11 @@ $(document).ready(function(){
                     }
                   }//response
                 });//ajáx
-			$('#gracias').addClass('bg-success'); 
+			$('#gracias').addClass('alert alert-success'); 
 			$('#gracias').show();  //método de jquery para mostrar
 			$('#gracias').append('<p>¡Gracias!</p>');
 		}else{
-			$('#gracias').addClass('bg-warning'); 
+			$('#gracias').addClass('alert alert-warning'); 
 			$('#gracias').show(); //sino, recorrer array: en el div con ID error pusheo los errores nombrados en las funciones
 			for (i=0;i<errores.length;i++){ 
 				$('#gracias').append(errores[i]);
@@ -96,21 +96,23 @@ $(document).ready(function(){
 	});//termina function de INGRESAR
 
 	$('#limpiar').on('click',function(){
+		$('#gracias').empty();
+		$('#gracias').hide();
 		$('#contacto')[0].reset();
 		console.log('limpiar formulario');
-		$('#gracias').html('');
+
 	});//botón limpiar
 	
 
 }); //termina document ready
 
-	var select = $('#genero');//variable select
+var select = $('#genero');//variable select
     for(i=0; i<options.length;i++){
 		value=i;
 		console.log('genero in');
 		var option = '<option value ="'+ value +'">'+ options[i] + '</option>';
 		select.append(option); 
-		
+	
 	}
 
 function validarEmail(email) { //Funcion para validar formato de mail//
@@ -118,11 +120,11 @@ function validarEmail(email) { //Funcion para validar formato de mail//
 		console.log('validarEmail in');
 		if (email == '' || email == null) {
 			console.log('mail vacio');
-			errores.push("<li>Por favor completa tu e-mail</li>");
+			errores.push("<p>Por favor completa tu e-mail</p>");
 		}else{
 			if (!expr.test(email)) {
 				console.log('mail invalido');
-				errores.push("<li>Por favor ingresá un email válido</li>");
+				errores.push("<p>Por favor ingresá un email válido</p>");
 			}else{
 				console.log('mail valido');
 				return true;
@@ -130,17 +132,17 @@ function validarEmail(email) { //Funcion para validar formato de mail//
 		}return false;
 	} //Fin validarEmail//
 
-	function validarNombre(nombre){ //Funcion para validar el nombre//
+function validarNombre(nombre){ //Funcion para validar el nombre//
 		console.log('validarName in');
 		if(nombre == '' || nombre == null){
 			console.log('nombre vacio');
-			errores.push("<li>Por favor completa tu nombre</li>");
+			errores.push("<p>Por favor completá tu nombre</p>");
 		} else {
 			if (!soloLetras(nombre)) {
 				console.log('Nombre invalido');
 				//error.style.display = 'block';
 				//error.innerHTML += '<li>Por favor ingresá un nombre valido</li>';//.innerHTML para poner algo dentro de html
-				errores.push("<li>Por favor ingresa tu nombre valido</li>");
+				errores.push("<p>Por favor ingresá un nombre válido</p>");
 			} else {
 			console.log('nombre valido');
 			return true;
@@ -148,19 +150,19 @@ function validarEmail(email) { //Funcion para validar formato de mail//
 		}return false;
 	} //Fin validarNombre//
 
-		function validarEdad(edad) { //Funcion para validar edad//
-		console.log('validarEdad in');
-		if (edad == '' || edad == null) {
+function validarEdad(edad) { //Funcion para validar edad//
+	console.log('validarEdad in');
+	if (edad == '' || edad == null) {
 			console.log('Edad vacia');
-			errores.push("<li>Por favor completa tu edad</li>");
+			errores.push("<p>Por favor completa tu edad</p>");
 		}else{
 			if(isNaN(parseInt(edad))) {
 				console.log('Edad invalida');
-				errores.push("<li>Por favor ingresa una edad valida</li>");
+				errores.push("<p>Por favor ingresá una edad válida</p>");
 			} else {
 				if (parseInt(edad) > 120 || parseInt(edad) < 18) {
 					console.log('Edad invalida');
-					errores.push("<li>Por favor ingresa una edad valida</li>");
+					errores.push("<p>Por favor ingresá una edad válida</p>");
 				}else{
 					console.log('Edad valida');
 					return true;
@@ -176,8 +178,6 @@ function soloLetras(x) { //Valido apellido y nombre con expresion regular//
 	}
 	return false;
 }
-
-
 
 //funciones slider
 function slide() {
