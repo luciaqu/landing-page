@@ -36,7 +36,7 @@ $(document).ready(function(){
 	
 	slide();
 	
-	});//fin funciones slider
+	});//Fin funcion slider on click
 
 	$('.vermas').on('click',function(){
 		var vid = $(this).data('id');
@@ -59,6 +59,7 @@ $(document).ready(function(){
 		validarEmail($('#email').val());
 		validarNombre($('#nombre').val());
 		validarEdad($('#edad').val());
+		validarSelect($('#genero').val());
 		
 		if (errores.length == 0){ //si el array de los errores es igual a cero, SUBMIT
 			/*$('#formulario').submit();*/
@@ -83,17 +84,19 @@ $(document).ready(function(){
                     }
                   }//response
                 });//ajáx
+			$('#gracias').removeClass('alert alert-warning');
 			$('#gracias').addClass('alert alert-success'); 
 			$('#gracias').show();  //método de jquery para mostrar
 			$('#gracias').append('<p>¡Gracias!</p>');
 		}else{
+			$('#gracias').removeClass('alert alert-success');
 			$('#gracias').addClass('alert alert-warning'); 
 			$('#gracias').show(); //sino, recorrer array: en el div con ID error pusheo los errores nombrados en las funciones
 			for (i=0;i<errores.length;i++){ 
 				$('#gracias').append(errores[i]);
 		    }
 		}
-	});//termina function de INGRESAR
+	});//Fin function de ENVIAR
 
 	$('#limpiar').on('click',function(){
 		$('#gracias').empty();
@@ -101,14 +104,14 @@ $(document).ready(function(){
 		$('#contacto')[0].reset();
 		console.log('limpiar formulario');
 
-	});//botón limpiar
+	});// Fin botón limpiar
 	
 
 }); //termina document ready
 
-var select = $('#genero');//variable select
+var select = $('#genero');//variable select para género
     for(i=0; i<options.length;i++){
-		value=i;
+		value= i; //se pone i + 1 para no usar el cero, USO EL CERO PARA SABER ELIGIÓ O NO.
 		console.log('genero in');
 		var option = '<option value ="'+ value +'">'+ options[i] + '</option>';
 		select.append(option); 
@@ -170,7 +173,7 @@ function validarEdad(edad) { //Funcion para validar edad//
 			}return false;
 		}//validar edad
 }
-function soloLetras(x) { //Valido apellido y nombre con expresion regular//
+function soloLetras(x) { //Valido apellido y nombre con expresion regular
 	console.log('soloLetras in');
 	expr = /^([a-zA-Z\s]{3,50})*$/ ; //expresion regular de intervalos de letras min 3 caracteres max 50//
 	if(expr.test(x)) {//test > para matchear var y expresión regular. expresionregular.test(variable).
@@ -178,6 +181,17 @@ function soloLetras(x) { //Valido apellido y nombre con expresion regular//
 	}
 	return false;
 }
+
+function validarSelect(option){//Valido Select de género.
+		if (option == 0){
+			console.log('Genero vacio');
+			errores.push("<p>Elija un género</p>");
+		}else{
+			console.log('genero valido');
+			return true;
+		}return false;
+
+	}
 
 //funciones slider
 function slide() {
