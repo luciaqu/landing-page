@@ -14,8 +14,11 @@ $(document).ready(function(){
 	// Formulario-login
 	$('#msj').hide(); // oculto el div
 	$('#ingresar').on ('click', function(){
+		$('#msj').empty();
 		user = $('#username').val();
 		pass = $('#password').val();
+
+
 
 		if (user == 'pepe' && pass == '123456'){
 			$('#msj').show();
