@@ -11,8 +11,6 @@ body{
 }
 .container{
 	margin-top: 3em;
-	margin-left: 3em;
-	margin-right: 3em;
 	margin-bottom: 1em;
 	padding-left: 2em;
 	padding-right: 2em;
@@ -34,10 +32,11 @@ header{/*******HEADER*******/
 
 #headerLogo{
 	margin-top: 0em;
+	margin-bottom: 1em;
 }
 
 #socialNav {
-	margin-top: 2em;
+	margin-top: 3em;
 	margin-bottom: 2em;
 }
 
@@ -78,13 +77,22 @@ header{/*******HEADER*******/
 }
 
 .seccion{
-	background: pink;
 	margin-bottom: 2em;
 	padding-top: 1em;
 	padding-right: 1em;
 	padding-bottom: 2em;
 	border-radius: 5px;
 }
+
+#info{
+	background: #ffd733;
+}
+
+#evento{
+	background: #81c781;
+}
+
+
 
 .vermas{
 	margin-top: 1em;
