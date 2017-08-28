@@ -36,11 +36,25 @@ header{/*******HEADER*******/
 }
 
 #socialNav {
+	padding: 1em;
 	margin-top: 3em;
-	margin-bottom: 2em;
+	margin-bottom: 3em;
+	
+}
+.linkNavRedes{
+	z-index: 1;
+	height: 100%;
+	width: 100%;
+}
+.ic-Redes{
+
+	margin: 0px auto;
+
 }
 
 .formulario-login{
+	z-index: 10;
+	padding: 0;
 	margin-bottom: 2em;
 	
 }
